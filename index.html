@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e2e2e2;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        li:nth-child(odd) {
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            {
+                fact: "Oldest International Sport",
+                description: "Cricket is one of the oldest team sports, with the first recorded international match played between the USA and Canada in 1844."
+            },
+            {
+                fact: "The Ashes",
+                description: "The Ashes is one of the most famous cricket series, played between England and Australia. It began in 1882 after England lost to Australia on home soil, leading to a satirical obituary in a British newspaper stating that English cricket had died, and 'the body will be cremated and the ashes taken to Australia.'"
+            },
+            {
+                fact: "Longest Match",
+                description: "The longest cricket match in history was played between England and South Africa in 1939. It lasted for 12 days and ended in a draw because the English team had to catch their boat home."
+            },
+            {
+                fact: "Sachin Tendulkar",
+                description: "Known as the 'God of Cricket,' Sachin Tendulkar is the only player to have scored 100 international centuries and is the highest run-scorer in both Test and One Day International (ODI) cricket."
+            },
+            {
+                fact: "Cricket World Cup",
+                description: "The ICC Cricket World Cup is one of the most watched sporting events globally. The first tournament was held in 1975 in England, and it is played every four years."
+            },
+            {
+                fact: "T20 Format",
+                description: "The Twenty20 (T20) format, introduced in 2003, revolutionized cricket by making the game shorter and more dynamic, with each team playing a single innings of 20 overs."
+            },
+            {
+                fact: "Bradman's Average",
+                description: "Sir Donald Bradman, an Australian cricketer, is widely regarded as the greatest batsman of all time, with an unmatched Test batting average of 99.94."
+            },
+            {
+                fact: "Cricket in Olympics",
+                description: "Cricket was once part of the Olympics, played only once in the 1900 Paris Games, where Great Britain won the gold medal."
+            },
+            {
+                fact: "First Cricket Club",
+                description: "The world's first cricket club was the Hambledon Club, formed in the 1760s in England. It was the game's greatest club until the formation of the Marylebone Cricket Club (MCC) in 1787."
+            },
+            {
+                fact: "Cricket Bats",
+                description: "The cricket bat is traditionally made from willow wood. The design of the bat has evolved over time, but the basic shape has remained the same since the 18th century."
+            }
+        ];
+
+        const factsList = document.getElementById('facts-list');
+
+        facts.forEach(fact => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+            factsList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
