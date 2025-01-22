@@ -40,12 +40,29 @@
         li:nth-child(odd) {
             background-color: #d1d1d1;
         }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Cricket Facts</h1>
         <ul id="facts-list"></ul>
+        <button id="replace-facts">Replace Facts</button>
     </div>
     <script>
         const facts = [
@@ -91,13 +108,47 @@
             }
         ];
 
-        const factsList = document.getElementById('facts-list');
+        const newFacts = [
+            {
+                fact: "First Cricket World Cup",
+                description: "The first Cricket World Cup was held in 1975 in England, and it was won by the West Indies."
+            },
+            {
+                fact: "Fastest Ball",
+                description: "The fastest recorded delivery in cricket was bowled by Shoaib Akhtar of Pakistan at 161.3 km/h (100.23 mph)."
+            },
+            {
+                fact: "First Day-Night Test Match",
+                description: "The first day-night Test match was played between Australia and New Zealand in November 2015 at the Adelaide Oval."
+            },
+            {
+                fact: "Most Runs in an Over",
+                description: "The record for the most runs scored in a single over in Test cricket is 28, achieved by Brian Lara off Robin Peterson in 2003."
+            },
+            {
+                fact: "First Hat-Trick",
+                description: "The first hat-trick in Test cricket was taken by Fred Spofforth of Australia against England in 1879."
+            }
+        ];
 
-        facts.forEach(fact => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
-            factsList.appendChild(listItem);
+        const factsList = document.getElementById('facts-list');
+        const replaceButton = document.getElementById('replace-facts');
+
+        function displayFacts(factsArray) {
+            factsList.innerHTML = '';
+            factsArray.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+                factsList.appendChild(listItem);
+            });
+        }
+
+        replaceButton.addEventListener('click', () => {
+            displayFacts(newFacts);
         });
+
+        // Display initial facts
+        displayFacts(facts);
     </script>
 </body>
 </html>
